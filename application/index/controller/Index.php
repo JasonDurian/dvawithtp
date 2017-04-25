@@ -6,6 +6,10 @@ use think\Controller;
 class Index extends Controller
 {
     
+    public function index() {
+        echo phpinfo();
+    }
+    
     public function hello($id = '', $name = 'world') {
     	
 //         $this->assign('name', $name);
