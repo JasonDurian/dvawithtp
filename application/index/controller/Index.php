@@ -17,4 +17,16 @@ class Index extends Controller
 		$this->redirect('index/News/read',['id'=>5]);
     }
     
+    public function test($id = '') {
+        $userModel = model('User');
+        $param = [
+            'post_id' => rand(1, 9)
+        ];
+        $data = $userModel->updateDataById($param, $id);
+        if (!$data) {
+            $this->error($userModel->getError());
+        }
+        $this->success('编辑成功');
+    }
+    
 }
