@@ -153,7 +153,7 @@ class User extends Model
 	    
 		$checkData = $this->get($id);
 		if (!$checkData) {
-			$this->error = '暂无此数据';
+			$this->error = '暂无此数据'.$checkData;
 			return false;
 		}
 		
