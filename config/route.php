@@ -14,10 +14,10 @@ return [
 // 		'new'  => 'News',
 // 	],
 	// 定义资源路由
-// 	'__rest__'	  => [
-// 		// 指向index模块的blog控制器
-// 		'blog'	=> 'index/blog',
-// 	],
+	'__rest__'	  => [
+		// 指向index模块的blog控制器
+		'blog'	=> 'index/blog',
+	],
     '__pattern__' => [
         'name' 	=> '\w+',
     ],
@@ -25,7 +25,7 @@ return [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
-//     'new/:id'	=> ['index/News/read',['method' => 'get']],
+    'new/:id'	=> ['index/News/read',['method' => 'get']],
 //     '__miss__'  => 'Miss/index',		//当不匹配路由规则时都显示此页面
 
 ];
