@@ -17,9 +17,13 @@ class Index extends Controller
 		$this->redirect('index/News/read',['id'=>5]);
     }
     
-    public function test($id = '') {
+    public function test() {
 //         $userModel = model('User');
         $param = [
+            'name'    => 'jason',
+            'email'   => '824676495@qq.com',
+            'website' => 'ddbookstore',
+            'create_time'=> time(),
             'post_id' => rand(1, 9)
         ];
 //         $data = $userModel->updateDataById($param, $id);
@@ -28,11 +32,11 @@ class Index extends Controller
 //         }
 //         $this->success('编辑成功');
         $userModel = db('User');
-        $data = $userModel->where(['id' => $id])->update($param);
+        $data = $userModel->insertGetId($param);
         if (!$data) {
-            $this->error('编辑失败');
+            $this->error('添加失败');
         }
-        $this->success('编辑成功');
+        $this->success('添加成功'.$data);
     }
     
 }
