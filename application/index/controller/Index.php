@@ -18,13 +18,19 @@ class Index extends Controller
     }
     
     public function test($id = '') {
-        $userModel = model('User');
+//         $userModel = model('User');
         $param = [
             'post_id' => rand(1, 9)
         ];
-        $data = $userModel->updateDataById($param, $id);
+//         $data = $userModel->updateDataById($param, $id);
+//         if (!$data) {
+//             $this->error($userModel->getError());
+//         }
+//         $this->success('编辑成功');
+        $userModel = db('User');
+        $data = $userModel->where(['id' => $id])->update($param);
         if (!$data) {
-            $this->error($userModel->getError());
+            $this->error('编辑失败');
         }
         $this->success('编辑成功');
     }
