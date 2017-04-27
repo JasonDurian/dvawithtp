@@ -18,18 +18,16 @@ return [
 		// 指向index模块的blog控制器
 		'blog'	=> 'index/blog',
 	],
-    '__pattern__' => [
-        'name' 	=> '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
-    'new/:id'	=> ['index/News/read',['method' => 'get']],
-//     '__miss__'  => 'Miss/index',		//当不匹配路由规则时都显示此页面
+//     '__pattern__' => [
+//         'name' 	=> '\w+',
+//     ],
+//     '[hello]'     => [
+//         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
+//         ':name' => ['index/hello', ['method' => 'post']],
+//     ],
+//     'new/:id'	=> ['index/News/read',['method' => 'get']],
+    
+    // MISS路由
+	'__miss__'  => 'index/base/miss',
 
 ];
-
-// use think\Route;
-// // 注册路由到index模块的News控制器的read操作
-// Route::get(['new/:id'=>'News/read','blog/:name'=>'Blog/detail']);

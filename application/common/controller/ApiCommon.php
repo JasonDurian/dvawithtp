@@ -8,12 +8,11 @@
 namespace app\common\controller;
 
 use think\Controller;
-use think\Request;
 
 class ApiCommon extends Controller
 {
     public $param;
-    protected $header;
+    protected $header = [];
     
     public function _initialize()
     {
