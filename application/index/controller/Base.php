@@ -88,6 +88,7 @@ class Base extends Common
         if (Request::instance()->isOptions()) {
             return ;
         } else {
+            config('default_return_type','html');
             return $this->fetch('./index.html');
         }
     }
