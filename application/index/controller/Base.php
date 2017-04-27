@@ -88,7 +88,7 @@ class Base extends Common
         if (Request::instance()->isOptions()) {
             return ;
         } else {
-            echo 'dvawithtp接口';
+            return $this->fetch('./index.html');
         }
     }
 }
